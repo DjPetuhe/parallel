@@ -31,7 +31,6 @@ public class Canvas extends JPanel {
             }
             else b.draw(g2);
         }
-
         for(int i = 0; i < this.holes.size(); ++i) {
             Hole h = (Hole)this.holes.get(i);
             h.draw(g2);

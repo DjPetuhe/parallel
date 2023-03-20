@@ -7,8 +7,9 @@ import java.awt.event.ActionListener;
 
 public class BounceFrame extends JFrame {
     private Canvas canvas;
-    public static final int WIDTH = 450;
-    public static final int HEIGHT = 350;
+    private JLabel counterLabel;
+    public static final int WIDTH = 800;
+    public static final int HEIGHT = 500;
 
     public BounceFrame() {
         this.setSize(WIDTH, HEIGHT);
@@ -50,13 +51,18 @@ public class BounceFrame extends JFrame {
         buttonPanel.add(buttonStop);
         content.add(buttonPanel, "South");
 
-        canvas.add(new Hole(canvas, "left-top", 0, 0));
-        canvas.add(new Hole(canvas, "middle-top", 0, WIDTH / 2 - 40));
-        canvas.add(new Hole(canvas, "right-top", 0, WIDTH - 60));
-        canvas.add(new Hole(canvas, "middle-left", (HEIGHT - 120) / 2, 0));
-        canvas.add(new Hole(canvas, "middle-right", (HEIGHT - 120) / 2, WIDTH - 60));
-        canvas.add(new Hole(canvas, "bottom-left", HEIGHT - 120, 0));
-        canvas.add(new Hole(canvas, "bottom-middle", HEIGHT - 120, WIDTH / 2 - 40));
-        canvas.add(new Hole(canvas, "bottom-right", HEIGHT - 120, WIDTH - 60));
+        JPanel textPanel = new JPanel();
+        counterLabel = new JLabel();
+        textPanel.add(counterLabel);
+        textPanel.setBackground(Color.lightGray);
+        content.add(textPanel, "North");
+        canvas.add(new Hole(canvas, "left-top", 0, 0, counterLabel));
+        canvas.add(new Hole(canvas, "middle-top", 0, WIDTH / 2 - 40, counterLabel));
+        canvas.add(new Hole(canvas, "right-top", 0, WIDTH - 60, counterLabel));
+        canvas.add(new Hole(canvas, "middle-left", (HEIGHT - 120) / 2, 0, counterLabel));
+        canvas.add(new Hole(canvas, "middle-right", (HEIGHT - 120) / 2, WIDTH - 60, counterLabel));
+        canvas.add(new Hole(canvas, "bottom-left", HEIGHT - 140, 0, counterLabel));
+        canvas.add(new Hole(canvas, "bottom-middle", HEIGHT - 140, WIDTH / 2 - 40, counterLabel));
+        canvas.add(new Hole(canvas, "bottom-right", HEIGHT - 140, WIDTH - 60, counterLabel));
     }
 }
