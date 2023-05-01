@@ -52,4 +52,19 @@ public class MatrixHelper {
         }
         return true;
     }
+
+    public static int[][][][] SplitToSubBlocks(int[][] matrix, int size) {
+        int[][][][] matrixSubBlocks = new int[matrix.length / size][matrix[0].length / size][size][size];
+        int k = 0;
+        for (int i = 0; i < matrix.length; i++) {
+            if (i % size == 0 && i != 0) k++;
+            int l = 0;
+            for (int j = 0; j < matrix[i].length; j++) {
+                if (j % size == 0 && j != 0) l++;
+                matrixSubBlocks[k][l][i % size][j % size] = matrix[i][j];
+            }
+        }
+        return matrixSubBlocks;
+    }
+
 }

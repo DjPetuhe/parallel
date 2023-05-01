@@ -1,6 +1,6 @@
 package Multipliers;
 
-import Result.Result;
+import Result.*;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -41,6 +41,10 @@ public class StrippedMultiplier extends DefaultMultiplier {
     public StrippedMultiplier(int[][] matrixMultiplicand, int[][] matrixMultiplier, int threadsAmount) {
         super(matrixMultiplicand, matrixMultiplier);
         setTransMatrixB(matrixMultiplier);
+        this.threadsAmount = threadsAmount;
+    }
+
+    public void setThreadsAmount(int threadsAmount) {
         this.threadsAmount = threadsAmount;
     }
 

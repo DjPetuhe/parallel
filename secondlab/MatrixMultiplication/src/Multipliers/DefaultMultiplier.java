@@ -1,6 +1,6 @@
 package Multipliers;
 
-import Result.Result;
+import Result.*;
 
 public class DefaultMultiplier {
     protected int[][] matrixA;
