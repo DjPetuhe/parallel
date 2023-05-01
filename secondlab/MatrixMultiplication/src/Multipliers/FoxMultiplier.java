@@ -39,6 +39,11 @@ public class FoxMultiplier extends DefaultMultiplier {
     private int[][][][] matrixBSubBlocks;
     private int threadsAmount;
 
+    public  FoxMultiplier(int threadsAmount) {
+        super();
+        this.threadsAmount = threadsAmount;
+    }
+
     public FoxMultiplier(int[][] matrixMultiplicand, int[][] matrixMultiplier, int threadsAmount) {
         super(matrixMultiplicand, matrixMultiplier);
         this.threadsAmount = threadsAmount;

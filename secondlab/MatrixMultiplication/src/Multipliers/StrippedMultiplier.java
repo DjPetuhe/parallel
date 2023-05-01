@@ -38,6 +38,11 @@ public class StrippedMultiplier extends DefaultMultiplier {
     private int[][] transMatrixB;
     private int threadsAmount;
 
+    public  StrippedMultiplier(int threadsAmount) {
+        super();
+        this.threadsAmount = threadsAmount;
+    }
+
     public StrippedMultiplier(int[][] matrixMultiplicand, int[][] matrixMultiplier, int threadsAmount) {
         super(matrixMultiplicand, matrixMultiplier);
         setTransMatrixB(matrixMultiplier);

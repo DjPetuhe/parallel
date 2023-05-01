@@ -6,6 +6,8 @@ public class DefaultMultiplier {
     protected int[][] matrixA;
     protected int[][] matrixB;
 
+    public DefaultMultiplier() { }
+
     public DefaultMultiplier(int[][] matrixMultiplicand, int[][] matrixMultiplier) {
         this.matrixA = matrixMultiplicand;
         this.matrixB = matrixMultiplier;
