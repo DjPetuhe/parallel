@@ -6,3 +6,9 @@
 *.iml
 
 */mkr
+
+course/
+
+отчеты/
+
+*/.idea/
