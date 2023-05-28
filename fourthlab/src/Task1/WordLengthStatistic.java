@@ -2,13 +2,10 @@ package Task1;
 
 import Common.*;
 
-
 import java.util.HashMap;
 import java.util.concurrent.ForkJoinPool;
 
-public class WordLengthStatistic {
-    private final ForkJoinPool forkJoinPool = new ForkJoinPool();
-    private long parallelTime;
+public class WordLengthStatistic extends GeneralStatistic {
     private long serialTime;
     public HashMap<Integer, Integer> countWordsLengthParallel(Folder folder) {
         long start = System.currentTimeMillis();
@@ -34,10 +31,6 @@ public class WordLengthStatistic {
         return result;
     }
 
-    public static String[] wordsIn(String line) {
-        return line.trim().split("(\\s|\\p{Punct})+");
-    }
-
     public static HashMap<Integer, Integer> wordsLengthCount(Document document) {
         HashMap<Integer, Integer> lengths = new HashMap<>();
         for (String line : document.getLines()) {
@@ -48,10 +41,6 @@ public class WordLengthStatistic {
             }
         }
         return lengths;
-    }
-
-    public double getParallelTime() {
-        return parallelTime;
     }
 
     public double getSerialTime() {

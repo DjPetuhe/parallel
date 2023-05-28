@@ -31,7 +31,7 @@ class FolderStatisticTask extends RecursiveTask<HashMap<Integer, Integer>> {
         }
         for (RecursiveTask<HashMap<Integer, Integer>> task : forks) {
             task.join().forEach(
-                    (key, value) -> lengths.merge(key, value, Integer::sum)
+                (key, value) -> lengths.merge(key, value, Integer::sum)
             );
         }
         return lengths;

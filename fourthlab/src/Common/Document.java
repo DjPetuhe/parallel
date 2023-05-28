@@ -9,13 +9,19 @@ import java.io.BufferedReader;
 
 public class Document {
     private final List<String> lines;
+    private final String name;
 
-    public Document(List<String> lines) {
+    public Document(List<String> lines, String name) {
         this.lines = lines;
+        this.name = name;
     }
 
     public List<String> getLines() {
         return this.lines;
+    }
+
+    public String getName() {
+        return name;
     }
 
     public static Document fromFile(File file) throws IOException {
@@ -27,6 +33,6 @@ public class Document {
                 line = reader.readLine();
             }
         }
-        return new Document(lines);
+        return new Document(lines, file.getName());
     }
 }
