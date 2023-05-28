@@ -15,9 +15,9 @@ public class Consumer implements Runnable {
         int num = drop.take();
         while (num != Drop.TERMINATOR) {
             System.out.format("Number: %s%n", num);
-            try {
-                Thread.sleep(random.nextInt(RANDOM_BOUND));
-            } catch (InterruptedException ignored) { }
+            //try {
+                //Thread.sleep(random.nextInt(RANDOM_BOUND));
+            //} catch (InterruptedException ignored) { }
             num = drop.take();
         }
     }

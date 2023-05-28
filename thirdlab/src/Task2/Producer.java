@@ -21,9 +21,9 @@ public class Producer implements Runnable {
         Random random = new Random();
         for (int j : numArr) {
             drop.put(j);
-            try {
-                Thread.sleep(random.nextInt(RANDOM_BOUND));
-            } catch (InterruptedException ignored) { }
+            //try {
+            //    Thread.sleep(random.nextInt(RANDOM_BOUND));
+            //} catch (InterruptedException ignored) { }
         }
         drop.put(Drop.TERMINATOR);
     }

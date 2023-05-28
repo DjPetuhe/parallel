@@ -26,4 +26,8 @@ public class Group {
     public String getStudentName(int i) {
         return students.get(i).getName();
     }
+
+    public Student getStudent(int i) {
+        return  students.get(i);
+    }
 }

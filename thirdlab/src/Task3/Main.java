@@ -32,19 +32,17 @@ public class Main {
         groups.add(new Group(group1));
         groups.add(new Group(group2));
         groups.add(new Group(group3));
-        EJournal journal = new EJournal(groups);
+        EJournal journal = new EJournal(groups, 5, 5000);
 
-        StudyWeeks time = new StudyWeeks(5, 5000, journal);
-
-        Professor lecturer = new Professor(time, journal);
-        Professor assist1 = new Professor(time, journal, 1);
-        Professor assist2 = new Professor(time, journal, 2);
-        Professor assist3 = new Professor(time, journal, 3);
+        Professor lecturer = new Professor(journal);
+        Professor assist1 = new Professor(journal, 1);
+        Professor assist2 = new Professor(journal, 2);
+        Professor assist3 = new Professor(journal, 3);
 
         new Thread(lecturer).start();
         new Thread(assist1).start();
         new Thread(assist2).start();
         new Thread(assist3).start();
-        new Thread(time).start();
+        new Thread(journal).start();
     }
 }

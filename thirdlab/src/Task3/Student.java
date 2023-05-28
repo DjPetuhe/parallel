@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class Student {
     private ArrayList<Integer> marks = new ArrayList<>();
     private final String fullName;
-    private boolean haveWeekMark = false;
+    private boolean haveWeekMark = true;
 
     public Student(String fullName) {
         this.fullName = fullName;
@@ -26,5 +26,9 @@ public class Student {
 
     public String getName() {
         return fullName;
+    }
+
+    public boolean getHaveMark() {
+        return  haveWeekMark;
     }
 }
