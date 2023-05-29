@@ -34,12 +34,15 @@ public class Professor implements Runnable {
                 for (int i = 0; i < group.getSize(); i++) {
                     int mark = random.nextInt(100) + 1;
                     if (group.setStudentMark(i, mark)) {
-                        locker.lock();
-                        if (lecturer)
-                            System.out.println("Lecturer: " + mark + " " + group.getStudentName(i));
-                        else
-                            System.out.println("Assistant of group #" + groupIndex + ": " + mark + " " + group.getStudentName(i));
-                        locker.unlock();
+                        try {
+                            locker.lock();
+                            if (lecturer)
+                                System.out.println("Lecturer: " + mark + " " + group.getStudentName(i));
+                            else
+                                System.out.println("Assistant of group #" + groupIndex + ": " + mark + " " + group.getStudentName(i));
+                        } finally {
+                            locker.unlock();
+                        }
                     }
                 }
             }
